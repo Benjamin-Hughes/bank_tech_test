@@ -12,4 +12,8 @@ describe Transaction do
   it "returns the date of the transaction" do
     expect(transaction.date).to eq(Date.today)
   end
+
+  it "returns the type of the transaction" do
+    expect(transaction.type).to eq('deposit')
+  end
 end
