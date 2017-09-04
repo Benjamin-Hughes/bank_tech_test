@@ -19,4 +19,20 @@ I want to be able to view a bank statement
 - Account: Stores the balance and is responsible for manipulating the balance
 and displaying the account history
 
+transaction_history will store
+
+{
+  date {
+    transaction type
+    amount
+    balance
+  }
+}
+
+
+
 - Customer: Stores a name and an account associated with it
+
+- Transaction: Provides the transaction object used to record customer transactions
+
+- BalancePrinter: Will format account information passed to if appropriately and display it
