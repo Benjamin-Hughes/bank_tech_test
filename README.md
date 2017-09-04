@@ -14,7 +14,9 @@ I want to be about to withdraw money from my account
 So I can see how broke I am
 I want to be able to view a bank statement
 
-### Initial Classes
+### Classes
 
-- account
-- user
+- Account: Stores the balance and is responsible for manipulating the balance
+and displaying the account history
+
+- Customer: Stores a name and an account associated with it
