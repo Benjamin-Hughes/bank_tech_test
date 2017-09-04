@@ -14,4 +14,10 @@ class Account
     @transaction_history << transaction
     @balance += transaction.amount
   end
+
+  def withdraw_funds(amount)
+    transaction = Transaction.new(Date.today, 'withdrawl', amount)
+    @transaction_history << transaction
+    @balance -= transaction.amount
+  end
 end

@@ -12,11 +12,14 @@ describe Account do
     expect(account.balance).to eq(initial_deposit)
   end
 
-  context "depositing money" do
-    it "allows the account holder to deposit money" do
-      account.add_funds(deposit)
-      expect(account.balance).to eq(initial_deposit + deposit)
-    end
+  it "allows the account holder to deposit money" do
+    account.add_funds(deposit)
+    expect(account.balance).to eq(initial_deposit + deposit)
+  end
+
+  it "allows the account holder to withdraw money" do
+    account.withdraw_funds(withdrawl)
+    expect(account.balance).to eq(initial_deposit - withdrawl)
   end
 
   it "stores a copy of the any transactions made" do
