@@ -5,9 +5,10 @@ describe Transaction do
   let(:date) { Date.today }
   let(:deposit) { 'deposit' }
   let(:withdrawl) { 'withdrawl' }
+  let(:balance) { 1000 }
   let(:amount) { 500 }
 
-  subject(:transaction) { described_class.new(date, deposit, amount) }
+  subject(:transaction) { described_class.new(date, deposit, amount, balance) }
 
   it "returns the date of the transaction" do
     expect(transaction.date).to eq(Date.today)

@@ -13,13 +13,13 @@ class Account
   end
 
   def add_funds(amount)
-    transaction = Transaction.new(Date.today, 'deposit', amount)
+    transaction = Transaction.new(Date.today, 'deposit', amount, balance)
     @transaction_history << transaction
     @balance += transaction.amount
   end
 
   def withdraw_funds(amount)
-    transaction = Transaction.new(Date.today, 'withdrawl', amount)
+    transaction = Transaction.new(Date.today, 'withdrawl', amount, balance)
     @transaction_history << transaction
     @balance -= transaction.amount
   end
