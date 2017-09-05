@@ -4,11 +4,10 @@ class BalancePrinter
   end
 
   def print_balance
-    puts "date || credit || debit || balance"
+    print_titles
     @transaction_history.each do | item |
-      break if eval_item(item) == false
+      return eval_item(item)
     end
-      true
   end
 
   def print_deposit(item)
@@ -16,7 +15,7 @@ class BalancePrinter
   end
 
   def print_withdrawl(item)
-      puts "#{item.date} || || #{item.amount} || #{item.current_balance}"
+    puts "#{item.date} || || #{item.amount} || #{item.current_balance}"
   end
 
   def eval_item(item)
@@ -25,8 +24,11 @@ class BalancePrinter
     elsif item.type == 'withdrawl'
       print_withdrawl(item)
     else
-      puts "Something went wrong!"
-      return false
+      puts "Invalid transaction type"
     end
+  end
+
+  def print_titles
+    puts "date || credit || debit || balance"
   end
 end

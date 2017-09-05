@@ -30,6 +30,6 @@ describe Account do
 
   it "displays a formatted list of transactions" do
     account.add_funds(deposit)
-    expect(account.print_balance).to be(true)
+    expect{account.print_balance}.to output("date || credit || debit || balance" + "\n" + Date.today.to_s + " || 1000 || || 1000\n").to_stdout
   end
 end
