@@ -1,9 +1,12 @@
 require './src/transaction.rb'
+require './src/balance_printer.rb'
 require 'date'
 require 'pry'
+
 class Account
   attr_reader :account_holder, :balance, :transaction_history
-  def initialize(initial_deposit)
+  def initialize(account_holder, initial_deposit)
+    @account_holder = account_holder
     @transaction_history = []
     @balance = 0
     @balance = add_funds(initial_deposit)
@@ -20,4 +23,10 @@ class Account
     @transaction_history << transaction
     @balance -= transaction.amount
   end
+
+  def print_balance
+    balance_printer = BalancePrinter.new(transaction_history)
+    balance_printer.print_balance
+  end
+
 end

@@ -14,6 +14,10 @@ describe Transaction do
   end
 
   it "returns the type of the transaction" do
-    expect(transaction.type).to eq('deposit')
+    expect(transaction.type).to eq(deposit)
+  end
+
+  it "returns the amount of a transaction" do
+    expect(transaction.amount).to eq(amount)
   end
 end

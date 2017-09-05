@@ -5,8 +5,10 @@ describe Account do
   let(:initial_deposit) { 1000 }
   let(:deposit) { 500 }
   let(:withdrawl) { 700 }
+  let(:account_holder) { 'Bob' }
 
-  subject(:account) { described_class.new(initial_deposit) }
+  subject(:account) { described_class.new(account_holder, initial_deposit) }
+
 
   it "has an initial balance" do
     expect(account.balance).to eq(initial_deposit)
@@ -26,9 +28,8 @@ describe Account do
     expect{account.add_funds(deposit)}.to change{account.transaction_history.length}.by(1)
   end
 
-  # whoops, wrong place!
-  # it "stores the date that the deposit was made" do
-  #   account.add_funds(deposit)
-  #   expect(account.transaction_history[-1].date).to eq(Date.today)
-  # end
+  it "displays a formatted list of transactions" do
+    account.add_funds(deposit)
+    expect(account.print_balance).to be(true)
+  end
 end

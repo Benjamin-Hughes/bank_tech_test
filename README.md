@@ -19,20 +19,29 @@ I want to be able to view a bank statement
 - Account: Stores the balance and is responsible for manipulating the balance
 and displaying the account history
 
-transaction_history will store
-
-{
-  date {
-    transaction type
-    amount
-    balance
-  }
-}
-
-
-
 - Customer: Stores a name and an account associated with it
 
 - Transaction: Provides the transaction object used to record customer transactions
 
 - BalancePrinter: Will format account information passed to if appropriately and display it
+
+### Usage
+
+To get started, clone the repo and run bundle to install the required gems:
+
+```
+git@github.com:Benjamin-Hughes/bank_tech_test.git
+bundle install
+```
+
+Next run rspec to check that everything is working:
+
+```
+bundle exec rspec
+```
+
+Now we can create an account object with and owner and initial balance:
+
+```ruby
+my_account = Account.new('Ben', 5000)
+```
