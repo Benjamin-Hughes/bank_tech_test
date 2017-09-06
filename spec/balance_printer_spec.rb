@@ -4,11 +4,11 @@ require 'date'
 
 describe BalancePrinter do
 
-  let(:withdrawl_mock) { [ instance_double("Transaction", :date => '2017-09-05',
+  let(:withdrawl_mock) { [ instance_double("Transaction", :date => Date.today.to_s,
     :type => 'withdrawl', :amount => 500, :current_balance => 1000 ) ] }
-  let(:deposit_mock) { [ instance_double("Transaction", :date => '2017-09-05',
+  let(:deposit_mock) { [ instance_double("Transaction", :date => Date.today.to_s,
     :type => 'deposit', :amount => 500, :current_balance => 1500 ) ] }
-  let(:invalid_mock) { [ instance_double("Transaction", :date => '2017-09-05',
+  let(:invalid_mock) { [ instance_double("Transaction", :date => Date.today.to_s,
       :type => 'foobar', :amount => 500, :current_balance => 1500 ) ] }
 
       subject(:withdrawl_printer) { described_class.new(withdrawl_mock) }

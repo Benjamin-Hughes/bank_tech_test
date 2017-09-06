@@ -30,7 +30,7 @@ and displaying the account history
 To get started, clone the repo and run bundle to install the required gems:
 
 ```
-git@github.com:Benjamin-Hughes/bank_tech_test.git
+git clone git@github.com:Benjamin-Hughes/bank_tech_test.git
 bundle install
 ```
 
@@ -40,7 +40,7 @@ Next run rspec to check that everything is working:
 bundle exec rspec
 ```
 
-Now we can create an account object with and owner and initial balance:
+Now we can jump into IRB and create an account object with and owner and initial balance:
 
 ```ruby
 my_account = Account.new('Ben', 5000)
