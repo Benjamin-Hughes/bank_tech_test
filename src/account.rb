@@ -28,5 +28,4 @@ class Account
     balance_printer = BalancePrinter.new(transaction_history)
     balance_printer.print_balance
   end
-
 end
