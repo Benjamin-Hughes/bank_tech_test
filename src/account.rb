@@ -5,7 +5,7 @@ require 'pry'
 
 class Account
   attr_reader :account_holder, :balance, :transaction_history
-  def initialize(account_holder, initial_deposit)
+  def initialize(account_holder, initial_deposit=0)
     @account_holder = account_holder
     @transaction_history = []
     @balance = 0
@@ -14,13 +14,13 @@ class Account
 
   def add_funds(amount)
     transaction = Transaction.new(Date.today, 'deposit', amount, balance)
-    @transaction_history << transaction
+    transaction_history << transaction
     @balance += transaction.amount
   end
 
   def withdraw_funds(amount)
     transaction = Transaction.new(Date.today, 'withdrawl', amount, balance)
-    @transaction_history << transaction
+    transaction_history << transaction
     @balance -= transaction.amount
   end
 

@@ -39,7 +39,7 @@ Next run rspec to check that everything is working:
 bundle exec rspec
 ```
 
-Now we can jump into IRB and create an account object with and owner and initial balance:
+Now we can jump into IRB and create an account object with and owner and initial balance if required (default is 0):
 
 ```ruby
 my_account = Account.new('Ben', 5000)
